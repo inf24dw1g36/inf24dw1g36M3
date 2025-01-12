@@ -1,0 +1,3954 @@
+{
+	"info": {
+		"_postman_id": "0718f3cb-4563-4e57-9b79-ce41bee11bef",
+		"name": "api-hotel-m3",
+		"description": "ApiHotelM3\n\nContact Support:\n Name: Gustavo-Amorin\n Email: gustavo.hp.amorin@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38629835"
+	},
+	"item": [
+		{
+			"name": "hospedes",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Hospede Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hospedes/count",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes",
+										"count"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Hospede model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "reservas",
+							"item": [
+								{
+									"name": "Hospede Reserva Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id/reservas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id",
+												"reservas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hospede model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hospedes/:id/reservas",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hospedes",
+														":id",
+														"reservas"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Hospede Reserva Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id/reservas?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id",
+												"reservas"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hospede.Reserva PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hospedes/:id/reservas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hospedes",
+														":id",
+														"reservas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Hospede Reserva Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id/reservas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id",
+												"reservas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Hospede has many Reserva",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hospedes/:id/reservas",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hospedes",
+														":id",
+														"reservas"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\"\n  },\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Hospede Reserva Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id/reservas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id",
+												"reservas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hospede.Reserva DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hospedes/:id/reservas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hospedes",
+														":id",
+														"reservas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Hospede Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hospedes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hospede PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Hospede Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hospedes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hospede PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Hospede Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hospedes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Hospede model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\",\n  \"reservas\": [\n    {\n      \"data_inic\": \"<dateTime>\",\n      \"data_fim\": \"<dateTime>\",\n      \"id\": \"<number>\",\n      \"id_hospede\": \"<number>\",\n      \"id_quarto\": \"<number>\",\n      \"hospede\": {\n        \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n      },\n      \"foreignKey\": {},\n      \"quarto\": {\n        \"numero\": \"<number>\",\n        \"preco\": \"<number>\",\n        \"id\": \"<number>\",\n        \"id_hotel\": \"<number>\",\n        \"hotel\": {\n          \"nome\": \"<string>\",\n          \"estrelas\": \"<number>\",\n          \"endereco\": \"<string>\",\n          \"id\": \"<number>\",\n          \"quartos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"reservas\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n          }\n        ]\n      }\n    },\n    {\n      \"data_inic\": \"<dateTime>\",\n      \"data_fim\": \"<dateTime>\",\n      \"id\": \"<number>\",\n      \"id_hospede\": \"<number>\",\n      \"id_quarto\": \"<number>\",\n      \"hospede\": {\n        \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n      },\n      \"foreignKey\": {},\n      \"quarto\": {\n        \"numero\": \"<number>\",\n        \"preco\": \"<number>\",\n        \"id\": \"<number>\",\n        \"id_hotel\": \"<number>\",\n        \"hotel\": {\n          \"nome\": \"<string>\",\n          \"estrelas\": \"<number>\",\n          \"endereco\": \"<string>\",\n          \"id\": \"<number>\",\n          \"quartos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n            }\n          ]\n        },\n        \"foreignKey\": {},\n        \"reservas\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Hospede Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hospedes/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hospedes/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hospedes",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hospede DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Hospede Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hospedes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hospedes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Hospede model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hospedes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hospede Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hospedes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hospedes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Hospede PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hospedes?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hospede Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/hospedes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hospedes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Hospede model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hospedes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hospedes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"nome\": \"<string>\",\n    \"nif\": \"<string>\",\n    \"telefone\": \"<number>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<number>\",\n    \"reservas\": [\n      {\n        \"data_inic\": \"<dateTime>\",\n        \"data_fim\": \"<dateTime>\",\n        \"id\": \"<number>\",\n        \"id_hospede\": \"<number>\",\n        \"id_quarto\": \"<number>\",\n        \"hospede\": {\n          \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"quarto\": {\n          \"numero\": \"<number>\",\n          \"preco\": \"<number>\",\n          \"id\": \"<number>\",\n          \"id_hotel\": \"<number>\",\n          \"hotel\": {\n            \"nome\": \"<string>\",\n            \"estrelas\": \"<number>\",\n            \"endereco\": \"<string>\",\n            \"id\": \"<number>\",\n            \"quartos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"reservas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            }\n          ]\n        }\n      },\n      {\n        \"data_inic\": \"<dateTime>\",\n        \"data_fim\": \"<dateTime>\",\n        \"id\": \"<number>\",\n        \"id_hospede\": \"<number>\",\n        \"id_quarto\": \"<number>\",\n        \"hospede\": {\n          \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"quarto\": {\n          \"numero\": \"<number>\",\n          \"preco\": \"<number>\",\n          \"id\": \"<number>\",\n          \"id_hotel\": \"<number>\",\n          \"hotel\": {\n            \"nome\": \"<string>\",\n            \"estrelas\": \"<number>\",\n            \"endereco\": \"<string>\",\n            \"id\": \"<number>\",\n            \"quartos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"reservas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  {\n    \"nome\": \"<string>\",\n    \"nif\": \"<string>\",\n    \"telefone\": \"<number>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<number>\",\n    \"reservas\": [\n      {\n        \"data_inic\": \"<dateTime>\",\n        \"data_fim\": \"<dateTime>\",\n        \"id\": \"<number>\",\n        \"id_hospede\": \"<number>\",\n        \"id_quarto\": \"<number>\",\n        \"hospede\": {\n          \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"quarto\": {\n          \"numero\": \"<number>\",\n          \"preco\": \"<number>\",\n          \"id\": \"<number>\",\n          \"id_hotel\": \"<number>\",\n          \"hotel\": {\n            \"nome\": \"<string>\",\n            \"estrelas\": \"<number>\",\n            \"endereco\": \"<string>\",\n            \"id\": \"<number>\",\n            \"quartos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"reservas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            }\n          ]\n        }\n      },\n      {\n        \"data_inic\": \"<dateTime>\",\n        \"data_fim\": \"<dateTime>\",\n        \"id\": \"<number>\",\n        \"id_hospede\": \"<number>\",\n        \"id_quarto\": \"<number>\",\n        \"hospede\": {\n          \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n        },\n        \"foreignKey\": {},\n        \"quarto\": {\n          \"numero\": \"<number>\",\n          \"preco\": \"<number>\",\n          \"id\": \"<number>\",\n          \"id_hotel\": \"<number>\",\n          \"hotel\": {\n            \"nome\": \"<string>\",\n            \"estrelas\": \"<number>\",\n            \"endereco\": \"<string>\",\n            \"id\": \"<number>\",\n            \"quartos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n              }\n            ]\n          },\n          \"foreignKey\": {},\n          \"reservas\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n            }\n          ]\n        }\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "hotels",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Hotel Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hotels/count",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels",
+										"count"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Hotel model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hotels/count",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												"count"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "quartos",
+							"item": [
+								{
+									"name": "Hotel Quarto Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id/quartos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id",
+												"quartos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hotel model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hotels/:id/quartos",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hotels",
+														":id",
+														"quartos"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Hotel Quarto Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id/quartos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id",
+												"quartos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hotel.Quarto PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/hotels/:id/quartos?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hotels",
+														":id",
+														"quartos"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Hotel Quarto Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id/quartos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id",
+												"quartos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Hotel has many Quarto",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hotels/:id/quartos?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hotels",
+														":id",
+														"quartos"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{}"
+										}
+									]
+								},
+								{
+									"name": "Hotel Quarto Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id/quartos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id",
+												"quartos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hotel.Quarto DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/hotels/:id/quartos?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"hotels",
+														":id",
+														"quartos"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Hotel Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hotels/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hotel PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Hotel Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hotels/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hotel PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Hotel Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hotels/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Hotel model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\",\n  \"quartos\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Hotel Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hotels/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/hotels/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"hotels",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Hotel DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Hotel Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hotels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Hotel model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hotels",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hotel Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/hotels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Hotel PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/hotels",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hotel Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/hotels",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hotels"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Hotel model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/hotels",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"hotels"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"nome\": \"<string>\",\n    \"estrelas\": \"<number>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<number>\",\n    \"quartos\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"nome\": \"<string>\",\n    \"estrelas\": \"<number>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<number>\",\n    \"quartos\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"item": [
+				{
+					"name": "Ping Controller.ping",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/ping",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ping Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/ping",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ping"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"greeting\": \"<string>\",\n  \"date\": \"<string>\",\n  \"url\": \"<string>\",\n  \"headers\": {\n    \"Content-Type\": \"<string>\",\n    \"ipsumaa\": \"in et tempor\",\n    \"culpa7df\": -77489765.60768978,\n    \"nisi_7d3\": -99858537.72564414,\n    \"non_0\": \"deserunt Ut cillum\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "quartos",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Quarto Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Quarto model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "hotel",
+							"item": [
+								{
+									"name": "Quarto Hotel Controller.get Hotel",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id/hotel",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id",
+												"hotel"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hotel belonging to Quarto",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/quartos/:id/hotel",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"quartos",
+														":id",
+														"hotel"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nome\": \"<string>\",\n  \"estrelas\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "reservas",
+							"item": [
+								{
+									"name": "Quarto Reserva Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id/reservas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id",
+												"reservas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Quarto model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/quartos/:id/reservas",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"quartos",
+														":id",
+														"reservas"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Quarto Reserva Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id/reservas",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id",
+												"reservas"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Quarto.Reserva PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/quartos/:id/reservas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"quartos",
+														":id",
+														"reservas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Quarto Reserva Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id/reservas?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id",
+												"reservas"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Quarto has many Reserva",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/quartos/:id/reservas?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"quartos",
+														":id",
+														"reservas"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\"\n  },\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Quarto Reserva Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id/reservas?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id",
+												"reservas"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Quarto.Reserva DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/quartos/:id/reservas?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"quartos",
+														":id",
+														"reservas"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Quarto Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Quarto PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Quarto Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Quarto PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Quarto Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Quarto model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\",\n  \"hotel\": {\n    \"nome\": \"<string>\",\n    \"estrelas\": \"<number>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<number>\",\n    \"quartos\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n      }\n    ]\n  },\n  \"foreignKey\": {},\n  \"reservas\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Quarto Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/quartos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"quartos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Quarto DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Quarto Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/quartos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Quarto model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Quarto Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/quartos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Quarto PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/quartos?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Quarto Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/quartos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"quartos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Quarto model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/quartos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"quartos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"numero\": \"<number>\",\n    \"preco\": \"<number>\",\n    \"id\": \"<number>\",\n    \"id_hotel\": \"<number>\",\n    \"hotel\": {\n      \"nome\": \"<string>\",\n      \"estrelas\": \"<number>\",\n      \"endereco\": \"<string>\",\n      \"id\": \"<number>\",\n      \"quartos\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"reservas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      }\n    ]\n  },\n  {\n    \"numero\": \"<number>\",\n    \"preco\": \"<number>\",\n    \"id\": \"<number>\",\n    \"id_hotel\": \"<number>\",\n    \"hotel\": {\n      \"nome\": \"<string>\",\n      \"estrelas\": \"<number>\",\n      \"endereco\": \"<string>\",\n      \"id\": \"<number>\",\n      \"quartos\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"reservas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reservas",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Reserva Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Reserva model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservas/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "hospede",
+							"item": [
+								{
+									"name": "Reserva Hospede Controller.get Hospede",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id/hospede",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id",
+												"hospede"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Hospede belonging to Reserva",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/reservas/:id/hospede",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservas",
+														":id",
+														"hospede"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"nome\": \"<string>\",\n  \"nif\": \"<string>\",\n  \"telefone\": \"<number>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "quarto",
+							"item": [
+								{
+									"name": "Reserva Quarto Controller.get Quarto",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id/quarto",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id",
+												"quarto"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Quarto belonging to Reserva",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/reservas/:id/quarto",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"reservas",
+														":id",
+														"quarto"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"numero\": \"<number>\",\n  \"preco\": \"<number>\",\n  \"id\": \"<number>\",\n  \"id_hotel\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Reserva Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Reserva PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Reserva Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Reserva PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Reserva Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Reserva model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\",\n  \"hospede\": {\n    \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n  },\n  \"foreignKey\": {},\n  \"quarto\": {\n    \"numero\": \"<number>\",\n    \"preco\": \"<number>\",\n    \"id\": \"<number>\",\n    \"id_hotel\": \"<number>\",\n    \"hotel\": {\n      \"nome\": \"<string>\",\n      \"estrelas\": \"<number>\",\n      \"endereco\": \"<string>\",\n      \"id\": \"<number>\",\n      \"quartos\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n        }\n      ]\n    },\n    \"foreignKey\": {},\n    \"reservas\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n      }\n    ]\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Reserva Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/reservas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"reservas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Reserva DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Reserva Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reserva model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id\": \"<number>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reserva Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reserva PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"data_inic\": \"<dateTime>\",\n  \"data_fim\": \"<dateTime>\",\n  \"id_hospede\": \"<number>\",\n  \"id_quarto\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/reservas?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reserva Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reservas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Reserva model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reservas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reservas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\",\n    \"hospede\": {\n      \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n    },\n    \"foreignKey\": {},\n    \"quarto\": {\n      \"numero\": \"<number>\",\n      \"preco\": \"<number>\",\n      \"id\": \"<number>\",\n      \"id_hotel\": \"<number>\",\n      \"hotel\": {\n        \"nome\": \"<string>\",\n        \"estrelas\": \"<number>\",\n        \"endereco\": \"<string>\",\n        \"id\": \"<number>\",\n        \"quartos\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n          }\n        ]\n      },\n      \"foreignKey\": {},\n      \"reservas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n        }\n      ]\n    }\n  },\n  {\n    \"data_inic\": \"<dateTime>\",\n    \"data_fim\": \"<dateTime>\",\n    \"id\": \"<number>\",\n    \"id_hospede\": \"<number>\",\n    \"id_quarto\": \"<number>\",\n    \"hospede\": {\n      \"value\": \"<Circular reference to #/components/schemas/HospedeWithRelations detected>\"\n    },\n    \"foreignKey\": {},\n    \"quarto\": {\n      \"numero\": \"<number>\",\n      \"preco\": \"<number>\",\n      \"id\": \"<number>\",\n      \"id_hotel\": \"<number>\",\n      \"hotel\": {\n        \"nome\": \"<string>\",\n        \"estrelas\": \"<number>\",\n        \"endereco\": \"<string>\",\n        \"id\": \"<number>\",\n        \"quartos\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/QuartoWithRelations detected>\"\n          }\n        ]\n      },\n      \"foreignKey\": {},\n      \"reservas\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/ReservaWithRelations detected>\"\n        }\n      ]\n    }\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
