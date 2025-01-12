@@ -38,11 +38,11 @@ api-hotel-m3/
    - `README.md`: Este arquivo, que contém as informações sobre o projeto.
 frontend/react_app
    - `src/`: Contem codigo essencial para o gerado create-react-app
-      -  `app.js/`: Informações essenciais da pagina html 
-      -  `hotels.js/`: Gestor informações dos hoteis. 
-      -  `quartos.js/`: Gestor informações dos quartos.
-      -  `hospedes.js/`: Gestor informações dos hospedes.
-      -  `reservas.js/`: Gestor informações das reservas.
+      -  `app.js`: Informações essenciais da pagina html 
+      -  `hotels.js`: Gestor informações dos hoteis. 
+      -  `quartos.js`: Gestor informações dos quartos.
+      -  `hospedes.js`: Gestor informações dos hospedes.
+      -  `reservas.js`: Gestor informações das reservas.
 
 ## Requisitos
 
@@ -74,4 +74,4 @@ frontend/react_app
    cd inf24dw1g36/api-hotel-m3/
    docker-compose up -d
    ```
-   browerser: http://127.0.0.1:8080
+   browerser: http://127.0.0.1:8080/#/hoteis
