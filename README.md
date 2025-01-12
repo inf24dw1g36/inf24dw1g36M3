@@ -30,19 +30,19 @@ api-hotel-m3/
    - `sql/`: Contém os ficheiro .sql quer foram usado na criação da base de dados.
    - `src/`: Contém o código essencial gerado pelo loopback4.
       - `controller/`: Contém os controladores dos modelos criados.
-      - `datasource/`: responsavel pela conecção a base de dados.
+      - `datasource/`: Responsavel pela conecção a base de dados.
       - `repositories/`: Contém a configuração para os containers Docker.
       - `models/`: Contém a informação sobre cada modelo criado.
-      - `compose.yaml`: ficheiro responsavel pela criação do docker compose
-   - `postman/`: Coleção de requisições para testes da API no Postman.
+      - `compose.yaml`: Ficheiro responsavel pela criação do docker compose
+      - `postman`: Coleção de requisições para testes da API no Postman.
    - `README.md`: Este arquivo, que contém as informações sobre o projeto.
 frontend/react_app
    - `src/`: Contem codigo essencial para o gerado create-react-app
-      -  `app.js/`: informações essenciais da pagina html 
-      -  `hotels.js/`: gestor informações dos hoteis. 
-      -  `quartos.js/`: gestor informações dos quartos.
-      -  `hospedes.js/`: gestor informações dos hospedes.
-      -  `reservas.js/`: gestor informações das reservas.
+      -  `app.js/`: Informações essenciais da pagina html 
+      -  `hotels.js/`: Gestor informações dos hoteis. 
+      -  `quartos.js/`: Gestor informações dos quartos.
+      -  `hospedes.js/`: Gestor informações dos hospedes.
+      -  `reservas.js/`: Gestor informações das reservas.
 
 ## Requisitos
 
