@@ -74,4 +74,4 @@ frontend/react_app
    cd inf24dw1g36/api-hotel-m3/
    docker-compose up -d
    ```
-   browerser: http://127.0.0.1:8080/#/hoteis
+   browerser: http://localhost:8080
