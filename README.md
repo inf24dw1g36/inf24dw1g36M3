@@ -1,4 +1,4 @@
-# Trabalho Prático - Desenvolvimento Web I (2º Semestre 2024/25)
+# Trabalho Prático - Desenvolvimento Web I (2024/25)
 
 ## Descrição do Projeto
 
@@ -21,26 +21,28 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web com base
 - Criar uma API RESTful utilizando Loopback4.
 - Construir uma aplicação de backoffice para administração dos dados.
 - Integrar a API com o banco de dados MySQL.
-- Documentar a API com OpenAPI 3.0.
+- Criação de uma collection postman.
 - Desenvolver a aplicação em ambiente Docker.
 
-## Estrutura do Projeto
+### Estrutura do Projeto
 
-O projeto está organizado da seguinte forma:
-
-- **Backend (API)**: Utiliza a framework Loopback4 para desenvolvimento da API RESTful.
-- **Frontend (Backoffice)**: Construído utilizando a biblioteca React-Admin.
-- **Banco de Dados**: MySQL.
-- **Docker**: Utilizado para a criação de containers para a aplicação.
-
-### Arquivos e Pastas
-
-- `backend/`: Contém o código da API desenvolvida com Loopback4.
-- `frontend/`: Contém o código da aplicação de backoffice desenvolvida com React-Admin.
-- `docker/`: Contém a configuração para os containers Docker.
-- `docs/`: Documentação da API em formato OpenAPI 3.0 e outros materiais relevantes.
-- `postman/`: Coleção de requisições para testes da API no Postman.
-- `README.md`: Este arquivo, que contém as informações sobre o projeto.
+api-hotel-m3/
+   - `sql/`: Contém os ficheiro .sql quer foram usado na criação da base de dados.
+   - `src/`: Contém o código essencial gerado pelo loopback4.
+      - `controller/`: Contém os controladores dos modelos criados.
+      - `datasource/`: responsavel pela conecção a base de dados.
+      - `repositories/`: Contém a configuração para os containers Docker.
+      - `models/`: Contém a informação sobre cada modelo criado.
+      - `compose.yaml`: ficheiro responsavel pela criação do docker compose
+   - `postman/`: Coleção de requisições para testes da API no Postman.
+   - `README.md`: Este arquivo, que contém as informações sobre o projeto.
+frontend/react_app
+   - `src/`: Contem codigo essencial para o gerado create-react-app
+      -  `app.js/`: informações essenciais da pagina html 
+      -  `hotels.js/`: gestor informações dos hoteis. 
+      -  `quartos.js/`: gestor informações dos quartos.
+      -  `hospedes.js/`: gestor informações dos hospedes.
+      -  `reservas.js/`: gestor informações das reservas.
 
 ## Requisitos
 
@@ -48,7 +50,6 @@ O projeto está organizado da seguinte forma:
 
 - Loopback4 para criação da API.
 - MySQL como banco de dados.
-- Documentação OpenAPI 3.0.
 
 ### Frontend
 
@@ -56,19 +57,21 @@ O projeto está organizado da seguinte forma:
 
 ### Docker
 
-- Docker Engine para contentorização da aplicação (pelo menos dois containers).
+- Docker Engine para contentorização da aplicação.
 
 ## Como Rodar o Projeto
 
 ### Pré-requisitos
 
 - **Docker** instalado.
-- **Node.js** e **npm** instalados (necessário para desenvolvimento local da API e do cliente).
 
 ### Passo a Passo
 
 1. **Clonar o repositório**:
 
    ```bash
-   git clone https://github.com/[nome_da_organização]/inf24dw1gXX
-   cd inf24dw1gXX
+   git clone https://github.com/inf24dw1g36/inf24dw1g36m3
+   cd inf24dw1g36/api-hotel-m3/
+   docker-compose up -d
+   ```
+   browerser: http://127.0.0.1:8080
