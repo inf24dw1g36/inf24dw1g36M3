@@ -36,6 +36,7 @@ api-hotel-m3/
       - `compose.yaml`: Ficheiro responsavel pela criação do docker compose
       - `postman`: Coleção de requisições para testes da API no Postman.
    - `README.md`: Este arquivo, que contém as informações sobre o projeto.
+     
 frontend/react_app
    - `src/`: Contem codigo essencial para o gerado create-react-app
       -  `app.js`: Informações essenciais da pagina html 
