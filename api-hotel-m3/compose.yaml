@@ -1,0 +1,32 @@
+services:
+  app:
+    image: inf24dw1g36/inf24dw1g36m3:latest
+    depends_on:
+      mysql: # Garante que o MySQL esteja pronto antes do Node.js
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+
+  mysql:
+    environment:
+      MYSQL_DATABASE: Hotels            # Nome do banco de dados a ser criad0
+      MYSQL_ROOT_PASSWORD: secret
+    image: inf24dw1g36/inf24dw1g36m3-mysql:latest
+    volumes:
+      - hotel-mysql-data:/var/lib/mysql # Volume persistente para dados do banco
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  frontend:
+    image: inf24dw1g36/inf24dw1g36m3-react-app:latest
+    depends_on:
+      - app
+    ports:
+      - "8080:80"
+
+volumes:
+  hotel-mysql-data:
