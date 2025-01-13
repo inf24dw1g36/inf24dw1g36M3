@@ -121,19 +121,17 @@ frontend/react_app
 
 ### Passo a Passo
 
-1. **Clonar o repositório**:
+Em um repositorio de sua escolha abra o terminal e digite os seguintes comandos
 
-   Em um repositorio de sua escolha abra o terminal e digite os seguintes comandos
+```bash
+git clone https://github.com/inf24dw1g36/inf24dw1g36M3.git
+cd inf24dw1g36/api-hotel-m3
+docker-compose up -d
+```
 
-   ```bash
-   git clone https://github.com/inf24dw1g36/inf24dw1g36M3.git
-   cd inf24dw1g36/api-hotel-m3
-   docker-compose up -d
-   ```
+os recursos ja estão disponiveis nos endpoints a baixo
 
-   os recursos ja estão disponiveis nos endpoints a baixo
+browerser:
+   - react-admin: http://localhost:8080
 
-   browerser:
-      - react-admin: http://localhost:8080
-
-      - loopback4: http://127.0.0.1:3000/docs
+   - loopback4: http://127.0.0.1:3000/docs
