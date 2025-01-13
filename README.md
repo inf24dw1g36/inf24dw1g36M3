@@ -117,7 +117,8 @@ frontend/react_app
 ### Pré-requisitos
 
 - **Docker** instalado.
-- Garantir que nenhum serviço esta a utilizar as portas 8080, 3000 e 3306
+- Garantir que nenhum serviço esta a utilizar as portas 8080, 3000 e 3306.
+- Garantir que o docker engine esteja executando.
 
 ### Passo a Passo
 
