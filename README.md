@@ -134,4 +134,4 @@ os recursos ja estão disponiveis nos endpoints a baixo
 browerser:
    - react-admin: http://localhost:8080
 
-   - loopback4: http://127.0.0.1:3000/docs
+   - loopback4: http://127.0.0.1:3000/explorer/
