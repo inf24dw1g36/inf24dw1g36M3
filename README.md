@@ -117,14 +117,23 @@ frontend/react_app
 ### Pré-requisitos
 
 - **Docker** instalado.
+- Garantir que nenhum serviço esta a utilizar as portas 8080, 3000 e 3306
 
 ### Passo a Passo
 
 1. **Clonar o repositório**:
 
+   Em um repositorio de sua escolha abra o terminal e digite os seguintes comandos
+
    ```bash
-   git clone https://github.com/inf24dw1g36/inf24dw1g36m3
-   cd inf24dw1g36/api-hotel-m3/
+   git clone https://github.com/inf24dw1g36/inf24dw1g36M3.git
+   cd inf24dw1g36/api-hotel-m3
    docker-compose up -d
    ```
-   browerser: http://localhost:8080
+
+   os recursos ja estão disponiveis nos endpoints a baixo
+
+   browerser:
+      - react-admin: http://localhost:8080
+
+      - loopback4: http://127.0.0.1:3000/docs
