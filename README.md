@@ -26,6 +26,58 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web com base
 
 ### Estrutura do Projeto
 
+### Endpoints
+
+| **Path**                           | **Método** | **Descrição**                                  |
+|-------------------------------------|------------|------------------------------------------------|
+| `/hotels`                           | GET        | Obtém uma lista de hotéis.                     |
+| `/hotels`                           | POST       | Cria um novo hotel.                            |
+| `/hotels`                           | PATCH       | Modifica parcialmente os dados de todos os hoteis. |
+| `/hotels/count`                     | GET        | Conta o número de hotéis.                     |
+| `/hotels/{id}`                      | GET        | Obtém os detalhes de um hotel específico.      |
+| `/hotels/{id}`                      | PUT        | Atualiza os dados de um hotel específico.      |
+| `/hotels/{id}`                      | PATCH      | Modifica parcialmente os dados de um hotel.    |
+| `/hotels/{id}`                      | DELETE     | Deleta um hotel específico.                   |
+| `/hotels/{id}/quartos`              | GET        | Obtém a lista de quartos de um hotel.          |
+| `/hotels/{id}/quartos`              | POST       | Cria um novo quarto para um hotel.             |
+| `/hotels/{id}/quartos`              | PATCH      | Modifica parcialmente os dados de um quarto.   |
+| `/hotels/{id}/quartos`              | DELETE     | Deleta um quarto de um hotel.                 |
+| `/hospedes`                         | GET        | Obtém a lista de hóspedes.                     |
+| `/hospedes`                         | POST       | Cria um novo hóspede.                          |
+| `/hospedes`                         | PATCH       | Modifica parcialmente os dados de todos os hóspede. |
+| `/hospedes/count`                   | GET        | Conta o número de hóspedes.                   |
+| `/hospedes/{id}`                    | GET        | Obtém os detalhes de um hóspede específico.    |
+| `/hospedes/{id}`                    | PUT        | Atualiza os dados de um hóspede específico.    |
+| `/hospedes/{id}`                    | PATCH      | Modifica parcialmente os dados de um hóspede.  |
+| `/hospedes/{id}`                    | DELETE     | Deleta um hóspede específico.                 |
+| `/hospedes/{id}/reservas`           | GET        | Obtém a lista de reservas de um hóspede.       |
+| `/hospedes/{id}/reservas`           | POST       | Cria uma nova reserva para um hóspede.         |
+| `/hospedes/{id}/reservas`           | PATCH      | Modifica parcialmente uma reserva de hóspede.  |
+| `/hospedes/{id}/reservas`           | DELETE     | Deleta uma reserva de hóspede.                |
+| `/quartos`                          | GET        | Obtém a lista de quartos.                      |
+| `/quartos`                          | POST       | Cria um novo quarto.                          |
+| `/quartos`                          | PATCH       | Modifica parcialmente os dados de todos os quartos. |
+| `/quartos/count`                    | GET        | Conta o número de quartos.                    |
+| `/quartos/{id}`                     | GET        | Obtém os detalhes de um quarto específico.     |
+| `/quartos/{id}`                     | PUT        | Atualiza os dados de um quarto específico.     |
+| `/quartos/{id}`                     | PATCH      | Modifica parcialmente os dados de um quarto.   |
+| `/quartos/{id}`                     | DELETE     | Deleta um quarto específico.                  |
+| `/quartos/{id}/reservas`            | GET        | Obtém a lista de reservas de um quarto.        |
+| `/quartos/{id}/reservas`            | POST       | Cria uma nova reserva para um quarto.          |
+| `/quartos/{id}/reservas`            | PATCH      | Modifica parcialmente uma reserva de quarto.   |
+| `/quartos/{id}/reservas`            | DELETE     | Deleta uma reserva de quarto.                 |
+| `/quartos/{id}/hotel`               | GET        | Obtém o hotel ao qual um quarto pertence.      |
+| `/reservas`                         | GET        | Obtém a lista de reservas.                     |
+| `/reservas`                         | POST       | Cria uma nova reserva.                        |
+| `/reservas`                         | PATCH       | Modifica parcialmente os dados de todas as reserva. |
+| `/reservas/count`                   | GET        | Conta o número de reservas.                   |
+| `/reservas/{id}`                    | GET        | Obtém os detalhes de uma reserva específica.   |
+| `/reservas/{id}`                    | PUT        | Atualiza os dados de uma reserva específica.   |
+| `/reservas/{id}`                    | PATCH      | Modifica parcialmente os dados de uma reserva. |
+| `/reservas/{id}`                    | DELETE     | Deleta uma reserva específica.                |
+| `/reservas/{id}/hospede`            | GET        | Obtém o hóspede relacionado a uma reserva.     |
+| `/reservas/{id}/quarto`             | GET        | Obtém o quarto relacionado a uma reserva.      |
+
 api-hotel-m3/
    - `sql/`: Contém os ficheiro .sql quer foram usado na criação da base de dados.
    - `src/`: Contém o código essencial gerado pelo loopback4.
