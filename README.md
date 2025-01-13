@@ -26,23 +26,76 @@ Este projeto tem como objetivo o desenvolvimento de uma aplicação web com base
 
 ### Estrutura do Projeto
 
+### Endpoints
+
+| **Path**                           | **Método** | **Descrição**                                  |
+|-------------------------------------|------------|------------------------------------------------|
+| `/hotels`                           | GET        | Obtém uma lista de hotéis.                     |
+| `/hotels`                           | POST       | Cria um novo hotel.                            |
+| `/hotels`                           | PATCH       | Modifica parcialmente os dados de todos os hoteis. |
+| `/hotels/count`                     | GET        | Conta o número de hotéis.                     |
+| `/hotels/{id}`                      | GET        | Obtém os detalhes de um hotel específico.      |
+| `/hotels/{id}`                      | PUT        | Atualiza os dados de um hotel específico.      |
+| `/hotels/{id}`                      | PATCH      | Modifica parcialmente os dados de um hotel.    |
+| `/hotels/{id}`                      | DELETE     | Deleta um hotel específico.                   |
+| `/hotels/{id}/quartos`              | GET        | Obtém a lista de quartos de um hotel.          |
+| `/hotels/{id}/quartos`              | POST       | Cria um novo quarto para um hotel.             |
+| `/hotels/{id}/quartos`              | PATCH      | Modifica parcialmente os dados de um quarto.   |
+| `/hotels/{id}/quartos`              | DELETE     | Deleta um quarto de um hotel.                 |
+| `/hospedes`                         | GET        | Obtém a lista de hóspedes.                     |
+| `/hospedes`                         | POST       | Cria um novo hóspede.                          |
+| `/hospedes`                         | PATCH       | Modifica parcialmente os dados de todos os hóspede. |
+| `/hospedes/count`                   | GET        | Conta o número de hóspedes.                   |
+| `/hospedes/{id}`                    | GET        | Obtém os detalhes de um hóspede específico.    |
+| `/hospedes/{id}`                    | PUT        | Atualiza os dados de um hóspede específico.    |
+| `/hospedes/{id}`                    | PATCH      | Modifica parcialmente os dados de um hóspede.  |
+| `/hospedes/{id}`                    | DELETE     | Deleta um hóspede específico.                 |
+| `/hospedes/{id}/reservas`           | GET        | Obtém a lista de reservas de um hóspede.       |
+| `/hospedes/{id}/reservas`           | POST       | Cria uma nova reserva para um hóspede.         |
+| `/hospedes/{id}/reservas`           | PATCH      | Modifica parcialmente uma reserva de hóspede.  |
+| `/hospedes/{id}/reservas`           | DELETE     | Deleta uma reserva de hóspede.                |
+| `/quartos`                          | GET        | Obtém a lista de quartos.                      |
+| `/quartos`                          | POST       | Cria um novo quarto.                          |
+| `/quartos`                          | PATCH       | Modifica parcialmente os dados de todos os quartos. |
+| `/quartos/count`                    | GET        | Conta o número de quartos.                    |
+| `/quartos/{id}`                     | GET        | Obtém os detalhes de um quarto específico.     |
+| `/quartos/{id}`                     | PUT        | Atualiza os dados de um quarto específico.     |
+| `/quartos/{id}`                     | PATCH      | Modifica parcialmente os dados de um quarto.   |
+| `/quartos/{id}`                     | DELETE     | Deleta um quarto específico.                  |
+| `/quartos/{id}/reservas`            | GET        | Obtém a lista de reservas de um quarto.        |
+| `/quartos/{id}/reservas`            | POST       | Cria uma nova reserva para um quarto.          |
+| `/quartos/{id}/reservas`            | PATCH      | Modifica parcialmente uma reserva de quarto.   |
+| `/quartos/{id}/reservas`            | DELETE     | Deleta uma reserva de quarto.                 |
+| `/quartos/{id}/hotel`               | GET        | Obtém o hotel ao qual um quarto pertence.      |
+| `/reservas`                         | GET        | Obtém a lista de reservas.                     |
+| `/reservas`                         | POST       | Cria uma nova reserva.                        |
+| `/reservas`                         | PATCH       | Modifica parcialmente os dados de todas as reserva. |
+| `/reservas/count`                   | GET        | Conta o número de reservas.                   |
+| `/reservas/{id}`                    | GET        | Obtém os detalhes de uma reserva específica.   |
+| `/reservas/{id}`                    | PUT        | Atualiza os dados de uma reserva específica.   |
+| `/reservas/{id}`                    | PATCH      | Modifica parcialmente os dados de uma reserva. |
+| `/reservas/{id}`                    | DELETE     | Deleta uma reserva específica.                |
+| `/reservas/{id}/hospede`            | GET        | Obtém o hóspede relacionado a uma reserva.     |
+| `/reservas/{id}/quarto`             | GET        | Obtém o quarto relacionado a uma reserva.      |
+
 api-hotel-m3/
    - `sql/`: Contém os ficheiro .sql quer foram usado na criação da base de dados.
    - `src/`: Contém o código essencial gerado pelo loopback4.
       - `controller/`: Contém os controladores dos modelos criados.
-      - `datasource/`: responsavel pela conecção a base de dados.
+      - `datasource/`: Responsavel pela conecção a base de dados.
       - `repositories/`: Contém a configuração para os containers Docker.
       - `models/`: Contém a informação sobre cada modelo criado.
-      - `compose.yaml`: ficheiro responsavel pela criação do docker compose
-   - `postman/`: Coleção de requisições para testes da API no Postman.
+      - `compose.yaml`: Ficheiro responsavel pela criação do docker compose
+      - `postman`: Coleção de requisições para testes da API no Postman.
    - `README.md`: Este arquivo, que contém as informações sobre o projeto.
+     
 frontend/react_app
    - `src/`: Contem codigo essencial para o gerado create-react-app
-      -  `app.js/`: informações essenciais da pagina html 
-      -  `hotels.js/`: gestor informações dos hoteis. 
-      -  `quartos.js/`: gestor informações dos quartos.
-      -  `hospedes.js/`: gestor informações dos hospedes.
-      -  `reservas.js/`: gestor informações das reservas.
+      -  `app.js`: Informações essenciais da pagina html 
+      -  `hotels.js`: Gestor informações dos hoteis. 
+      -  `quartos.js`: Gestor informações dos quartos.
+      -  `hospedes.js`: Gestor informações dos hospedes.
+      -  `reservas.js`: Gestor informações das reservas.
 
 ## Requisitos
 
@@ -64,14 +117,22 @@ frontend/react_app
 ### Pré-requisitos
 
 - **Docker** instalado.
+- Garantir que nenhum serviço esta a utilizar as portas 8080, 3000 e 3306.
+- Garantir que o docker engine esteja executando.
 
 ### Passo a Passo
 
-1. **Clonar o repositório**:
+Em um repositorio de sua escolha abra o terminal e digite os seguintes comandos
 
-   ```bash
-   git clone https://github.com/inf24dw1g36/inf24dw1g36m3
-   cd inf24dw1g36/api-hotel-m3/
-   docker-compose up -d
-   ```
-   browerser: http://127.0.0.1:8080
+```bash
+git clone https://github.com/inf24dw1g36/inf24dw1g36M3.git
+cd inf24dw1g36/api-hotel-m3
+docker-compose up -d
+```
+
+os recursos ja estão disponiveis nos endpoints a baixo
+
+browerser:
+   - react-admin: http://localhost:8080
+
+   - loopback4: http://127.0.0.1:3000/explorer/
